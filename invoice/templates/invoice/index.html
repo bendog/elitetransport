@@ -1,0 +1,13 @@
+<a href="{% url 'stickerUnprinted' %}">print unprinted forms</a>
+<hr>
+{% if stickerOrder_list %}
+    <ul>
+    {% for sticker in stickerOrder_list %}
+        <li><a href="{% url 'stickerDetail' sticker.id %}">{{ sticker.id }}:{{ sticker.store.company.name }} {{ sticker.store.location.name }} - {{ sticker.date }} ({{ sticker.stickerstart }} + {{ sticker.qty }})</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No Sticker Orders are available.</p>
+{% endif %}
+    <hr/>
+    <a href="{% url 'stickerUnprinted' %}">print unprinted forms</a>

@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Sticker Detail{% endblock %}
+{% block content %}
+    <div class='full page'>
+        <div id='header'>
+            <div id='headerleft' class='borderline leftside'>
+                <img src='{% static 'invoice/elitetransport_logo.png' %}' class='logoimage'><br>
+                <br>
+                <strong>Elite Transport WA Pty Ltd</strong><br>
+                <strong>ABN:</strong> 18 165 457 321<br>
+                <strong>email:</strong> <font size='-0.5'>accounts@elitetransport.com.au</font>
+            </div>
+            <div id='headerright' class='borderline rightside textcenter'>
+                <br>
+                <br>
+                <br>
+                <span class='title'>Sticker Order:  <span><br>
+                <span class='value'>{{ stickerOrder.id }}  </span>
+            </div>
+        </div>
+        <div id='contents'>
+            <div id='companyname' class='borderline full'>
+                <span class='title'>Company: </span><span class='value'>{{ stickerOrder.store.company.name }}</span>
+            </div>
+            <div id='store' class='borderline full'>
+                <span class='title'>Store: </span><span class='value'>{{ stickerOrder.store.location.name }}</span>
+            </div>
+            <div>
+                <div id='state' class='borderline leftside'>
+                    <span class='title'>State: </span><br/>
+                    <span class='value'>{{ stickerOrder.store.location.suburb.state }}</span>
+                </div>
+                <div id='date' class='borderline rightside'>
+                    <span class='title'>Date: </span><br/>
+                    <span class='value'>{{ stickerOrder.date|date:"d/m/Y" }}</span>
+                </div>
+            </div>
+            <div id='goodssupplied' class='borderline full'>
+                <span class='title'>Goods Supplied: </span><span class='value'>{{ stickerOrder.qty }} Stickers</span>
+            </div>
+            <div id='stickernumber' class='borderline full'>
+                <span class='title'>Stickers: </span><span class='value'>{{ stickerOrder.stickerstart }} - {{ stickerOrder.stickerend }}</span>
+            </div>
+            <div class='signrow full'>
+                <div id='signed' class='borderline leftside signbox signboxleft'>
+                    <span class='signboxtext underline'>
+                        <span class='title'>Signed: </span>
+                    </span>
+                </div>
+                <div id='storenum' class='borderline rightside signbox signboxright'>
+                    <span class='signboxtext underline'>
+                        <span class='title'>Store no.: </span>
+                    </span>
+                </div>
+            </div>
+            <div class='signnamerow full'>
+                <div id='printname' class='borderline full signnamebox'>
+                    <span class='signnameboxtext underline'>
+                        <span class='title'>Print Name: </span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

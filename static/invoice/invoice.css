@@ -1,0 +1,87 @@
+body{
+    max-width:18cm;
+    min-width:18cm;
+    font-family: "HelveticaNeue", "Helvetica Neue", "HelveticaNeueRoman", "HelveticaNeue-Roman", "Helvetica Neue Roman", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+    font-size: 0.5cm;
+    font-weight: 400;
+    font-stretch: normal;
+}
+.page{
+    clear:both;
+/*  page-break-after:auto;*/
+    page-break-after:always;
+    display: block;
+    width:18cm;
+    height:25.6cm;
+}
+#header{
+    height:5.6cm;
+}
+.logoimage{
+    width:8.6cm;
+}
+.borderline{
+    border: 0.05cm solid #999;
+    padding: 0.10cm;
+    margin-top: 0.08cm;
+    margin-bottom: 0.08cm;
+    height:100%;
+    overflow: hidden;
+    }
+#store{
+    height:3.5cm;
+}
+.signrow{
+    height:4.4cm;
+    position:relative;
+}
+.signbox{
+    height:4.1cm;
+    position: absolute;
+    bottom: 0;
+}
+.signboxtext{
+    display:table-cell;
+    vertical-align:bottom;
+    height:4.0cm;
+    width:8.5cm;
+}
+.signboxleft{left:0}
+.signboxright{right:0}
+
+.signnamerow{
+    height:2.6cm;
+    position:relative;
+}
+.signnamebox{
+    height:2.3cm;
+    position: absolute;
+    bottom: 0;
+}
+.signnameboxtext{
+    display:table-cell;
+    vertical-align:bottom;
+    height:2.2cm;
+    width:18cm;
+}
+
+.underline{border-bottom: 0.1cm solid #000;}
+.leftside{width:8.72cm; float:left}
+.rightside{width:8.72cm; float:right}
+.full{clear:both;}
+
+.title{
+    font-size:0.65cm;
+    text-align:left;
+    }
+.value{
+    font-size:1.2cm;
+    text-align:center;
+    padding:0.6cm;
+    }
+.textright{
+    text-align:right;
+}
+.textcenter{
+    text-align:center;
+}

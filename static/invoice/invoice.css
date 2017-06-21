@@ -22,7 +22,7 @@ body{
 }
 .borderline{
     border: 0.05cm solid #999;
-    padding: 0.10cm;
+    padding: 0.07cm; /* this needs to update */
     margin-top: 0.08cm;
     margin-bottom: 0.08cm;
     height:100%;

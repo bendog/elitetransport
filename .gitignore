@@ -1,0 +1,6 @@
+/media/.DS_Store
+.DS_Store
+*.pyc
+/.idea
+/db.sqlite3
+/elitetransport/config.py

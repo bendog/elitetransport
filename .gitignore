@@ -1,3 +1,6 @@
+/static
+/db
+
 .venv/
 *.pyc
 

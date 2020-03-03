@@ -105,6 +105,8 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+LOGIN_REDIRECT_URL = '/'
+LOGIN_URL = '/accounts/login/?next=/invoice/'
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/

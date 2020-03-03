@@ -9,8 +9,11 @@ from invoice.models import StickerOrder
 
 @login_required
 def index(request):
+    sticker_order_list = StickerOrder.objects.select_related('store', 'store__company', 'store__location').order_by('store')
+    if request.GET.get('unprinted'):
+        sticker_order_list = sticker_order_list.filter(printed=False)
     return render(request, 'invoice/index.html', {
-        'stickerOrder_list': StickerOrder.objects.order_by('store'),
+        'stickerOrder_list': sticker_order_list,
     })
 
 
@@ -22,5 +25,5 @@ def stickerDetail(request, sticker_id):
 
 @login_required
 def stickerUnprinted(request):
-    stickerOrder_list = StickerOrder.objects.filter(printed=False)
+    stickerOrder_list = StickerOrder.objects.select_related('store', 'store__company', 'store__location').filter(printed=False)
     return render(request, 'invoice/stickerList.html', {'stickerOrder_list': stickerOrder_list})

@@ -1,13 +1,69 @@
-<a href="{% url 'stickerUnprinted' %}">print unprinted forms</a>
-<hr>
+{% extends 'base.html' %}
+{% block content %}
+
+
+
+<section>
+<ul class="tabs" width="100%">
+    <li><a class="tab {% if request.GET.unprinted != '1' %}active{% endif %}" href="?">All</a></li>
+    <li><a class="tab {% if request.GET.unprinted == '1' %}active{% endif %}" href="?unprinted=1">Unprinted</a></li>
+</ul>
+
+
 {% if stickerOrder_list %}
-    <ul>
-    {% for sticker in stickerOrder_list %}
-        <li><a href="{% url 'stickerDetail' sticker.id %}">{{ sticker.id }}:{{ sticker.store.company.name }} {{ sticker.store.location.name }} - {{ sticker.date }} ({{ sticker.stickerstart }} + {{ sticker.qty }})</a></li>
-    {% endfor %}
-    </ul>
+    <table width="100%">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>company</th>
+                <th>store</th>
+                <th>date</th>
+                <th>numbers</th>
+                <th>printed</th>
+                <th>signed</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for sticker in stickerOrder_list %}
+            <tr>
+                <td>
+                    <a href="{% url 'stickerDetail' sticker.id %}">{{ sticker.id }}</a>
+                </td>
+                <td>
+                    {{ sticker.store.company.name }} 
+                </td>
+                <td>
+                    {{ sticker.store.location.name }}
+                </td>
+                <td>
+                    {{ sticker.date }} 
+                </td>
+                <td>
+                    {{ sticker.stickerstart }} + {{ sticker.qty }}
+                </td>
+                <td>
+                    {% if sticker.printed %}
+                        ✅
+                    {% else %}
+                        ❌
+                    {% endif %}
+                </td>
+                <td>
+                    {% if sticker.signed %}
+                        ✅
+                    {% else %}
+                        ❌
+                    {% endif %}
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    
 {% else %}
     <p>No Sticker Orders are available.</p>
 {% endif %}
-    <hr/>
-    <a href="{% url 'stickerUnprinted' %}">print unprinted forms</a>
+
+</section>
+
+{% endblock %}

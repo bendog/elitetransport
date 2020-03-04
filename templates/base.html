@@ -1,16 +1,51 @@
 {% load static %}
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-   "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <html lang="en">
+
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<title>EliteTransport:{% block title %}Sticker System{% endblock %}</title>
 	<meta name="author" content="Ben Fitzhardinge">
 	<!-- Date: 2013-08-29 -->
-    <link rel="stylesheet" type="text/css" href="{% static 'invoice/invoice.css' %}">
+	<link rel="stylesheet" href="https://unpkg.com/mustard-ui@latest/dist/css/mustard-ui.min.css">
+	<style>
+		nav {
+			background: #41AD48;
+			color: #FFF;
+		}
+
+		nav a {
+			color: #FFF;
+		}
+
+		nav a:hover {
+			color: #ffc107;
+		}
+
+		nav a:active {
+			color: #ffc107;
+		}
+	</style>
 </head>
+
 <body>
-{% block content %}{% endblock %}
+	<nav>
+		<div class="nav-container">
+			<div class="nav-logo">
+				<a href="/">EliteTransport</a>
+			</div>
+			<ul class="nav-links">
+				<li><a href="{% url 'index' %}">index</a></li>
+				<li>
+					<a href="{% url 'stickerUnprinted' %}">print unprinted forms</a>
+				</li>
+				<li><a href="{% url 'admin:index' %}">admin</a></li>
+				<li><a href="{% url 'logout' %}?next=/">logout</a></li>
+			</ul>
+		</div>
+	</nav>
+	{% block content %}{% endblock %}
 </body>
+
 </html>

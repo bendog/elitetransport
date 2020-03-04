@@ -1,6 +1,13 @@
-/media/.DS_Store
-.DS_Store
+/static
+/db
+
+.venv/
 *.pyc
+
 /.idea
+**/.DS_Store
+.DS_Store
+
 /db.sqlite3
 /elitetransport/config.py
+.vscode

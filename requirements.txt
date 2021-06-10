@@ -4,7 +4,8 @@
 #
 #    pip-compile --output-file requirements.txt requirements.prod
 #
-django==1.11.1
+django==2.2.24
 gunicorn==19.7.1
 psycopg2==2.7.1
 pytz==2017.2
+sqlparse==0.4.1
